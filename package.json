@@ -1,0 +1,26 @@
+{
+  "name": "time-chunk",
+  "version": "1.0.0",
+  "description": "Splitting a time period into multiple time periods of specified duration.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodyTseng/time-chunk.git"
+  },
+  "keywords": [],
+  "author": "CodyTseng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodyTseng/time-chunk/issues"
+  },
+  "homepage": "https://github.com/CodyTseng/time-chunk#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.2",
+    "typescript": "^4.3.5"
+  }
+}
