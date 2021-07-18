@@ -21,24 +21,7 @@ export class TimeChunk {
   }
 
   private _add(time: number, interval: number, unit: UNITS) {
-    switch (unit) {
-      case UNITS.MILLIONSECOND:
-        return this._addMillionSecond(time, interval);
-      case UNITS.SECOND:
-        return this._addSeconde(time, interval);
-      case UNITS.MINUTE:
-        return this._addMinute(time, interval);
-      case UNITS.HOUR:
-        return this._addHour(time, interval);
-      case UNITS.DAY:
-        return this._addDay(time, interval);
-      case UNITS.WEEK:
-        return this._addWeek(time, interval);
-      case UNITS.MONTH:
-        return this._addMonth(time, interval);
-      case UNITS.YEAR:
-        return this._addYear(time, interval);
-    }
+    return this[unit](time, interval);
   }
 
   private _addMillionSecond(time: number, interval: number) {
@@ -79,12 +62,12 @@ export class TimeChunk {
 }
 
 export enum UNITS {
-  MILLIONSECOND = 'ms',
-  SECOND = 's',
-  MINUTE = 'm',
-  HOUR = 'h',
-  DAY = 'D',
-  WEEK = 'W',
-  MONTH = 'M',
-  YEAR = 'Y',
+  MILLIONSECOND = '_addMillionSecond',
+  SECOND = '_addSeconde',
+  MINUTE = '_addMinute',
+  HOUR = '_addHour',
+  DAY = '_addDay',
+  WEEK = '_addWeek',
+  MONTH = '_addMonth',
+  YEAR = '_addYear',
 }

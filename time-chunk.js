@@ -21,24 +21,7 @@ var TimeChunk = /** @class */ (function () {
         return chunks;
     };
     TimeChunk.prototype._add = function (time, interval, unit) {
-        switch (unit) {
-            case UNITS.MILLIONSECOND:
-                return this._addMillionSecond(time, interval);
-            case UNITS.SECOND:
-                return this._addSeconde(time, interval);
-            case UNITS.MINUTE:
-                return this._addMinute(time, interval);
-            case UNITS.HOUR:
-                return this._addHour(time, interval);
-            case UNITS.DAY:
-                return this._addDay(time, interval);
-            case UNITS.WEEK:
-                return this._addWeek(time, interval);
-            case UNITS.MONTH:
-                return this._addMonth(time, interval);
-            case UNITS.YEAR:
-                return this._addYear(time, interval);
-        }
+        return this[unit](time, interval);
     };
     TimeChunk.prototype._addMillionSecond = function (time, interval) {
         return time + interval;
@@ -69,12 +52,12 @@ var TimeChunk = /** @class */ (function () {
 exports.TimeChunk = TimeChunk;
 var UNITS;
 (function (UNITS) {
-    UNITS["MILLIONSECOND"] = "ms";
-    UNITS["SECOND"] = "s";
-    UNITS["MINUTE"] = "m";
-    UNITS["HOUR"] = "h";
-    UNITS["DAY"] = "D";
-    UNITS["WEEK"] = "W";
-    UNITS["MONTH"] = "M";
-    UNITS["YEAR"] = "Y";
+    UNITS["MILLIONSECOND"] = "_addMillionSecond";
+    UNITS["SECOND"] = "_addSeconde";
+    UNITS["MINUTE"] = "_addMinute";
+    UNITS["HOUR"] = "_addHour";
+    UNITS["DAY"] = "_addDay";
+    UNITS["WEEK"] = "_addWeek";
+    UNITS["MONTH"] = "_addMonth";
+    UNITS["YEAR"] = "_addYear";
 })(UNITS = exports.UNITS || (exports.UNITS = {}));

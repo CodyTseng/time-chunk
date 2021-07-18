@@ -17,12 +17,12 @@ export declare class TimeChunk {
     private _addYear;
 }
 export declare enum UNITS {
-    MILLIONSECOND = "ms",
-    SECOND = "s",
-    MINUTE = "m",
-    HOUR = "h",
-    DAY = "D",
-    WEEK = "W",
-    MONTH = "M",
-    YEAR = "Y"
+    MILLIONSECOND = "_addMillionSecond",
+    SECOND = "_addSeconde",
+    MINUTE = "_addMinute",
+    HOUR = "_addHour",
+    DAY = "_addDay",
+    WEEK = "_addWeek",
+    MONTH = "_addMonth",
+    YEAR = "_addYear"
 }
