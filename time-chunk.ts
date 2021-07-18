@@ -13,7 +13,7 @@ export class TimeChunk {
       const next = this._add(currTime, interval, unit);
       chunks.push({
         start: currTime,
-        end: Math.min(next - 1, this.endTime),
+        end: Math.min(next - 1, this.endTime - 1),
       });
       currTime = next;
     }
