@@ -23,6 +23,22 @@ describe('test', () => {
     }
   });
 
+  it('millionSecond without unit', () => {
+    const START_TIME = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
+    const CHUNKS_LENGTH = 20;
+    const TIME = 1;
+    const INTERVAL = 2;
+    const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
+
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(INTERVAL);
+    expect(chunks.length).equal(CHUNKS_LENGTH);
+    expect(chunks[0].start).equal(START_TIME);
+    expect(chunks[CHUNKS_LENGTH - 1].end).equal(END_TIME - 1);
+    for (let i = 1; i < CHUNKS_LENGTH; i++) {
+      expect(chunks[i].start - chunks[i - 1].start).equal(TIME * INTERVAL);
+    }
+  });
+
   it('second', () => {
     const START_TIME = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
     const CHUNKS_LENGTH = 20;
@@ -163,6 +179,20 @@ describe('test', () => {
     expect(chunks[0].start).equal(START_TIME);
     expect(chunks[CHUNKS_LENGTH - 1].end).equal(END_TIME - 1);
     for (let i = 1; i < CHUNKS_LENGTH; i++) {
+      expect(
+        new Date(chunks[i].start).getFullYear() -
+          new Date(chunks[i - 1].start).getFullYear(),
+      ).equal(INTERVAL);
+    }
+  });
+
+  it('year without endTime', () => {
+    const START_TIME = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
+    const INTERVAL = 2;
+
+    const chunks = new TimeDivider(START_TIME).divide(INTERVAL, UNITS.YEAR);
+    expect(chunks[0].start).equal(START_TIME);
+    for (let i = 1; i < chunks.length; i++) {
       expect(
         new Date(chunks[i].start).getFullYear() -
           new Date(chunks[i - 1].start).getFullYear(),
