@@ -1,9 +1,9 @@
-# time-chunk
+# Time-Divider
 
 Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)
 
 ```bash
-npm install time-chunk --save
+npm install time-divider --save
 ```
 
 Eglish | [中文简体](./README_zh.md)
@@ -11,12 +11,12 @@ Eglish | [中文简体](./README_zh.md)
 ## Usage
 
 ```js
-const { TimeChunk, UNITS } = require('time-chunk');
+const { TimeDivider, UNITS } = require('time-divider');
 
 const startTime = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
 const endTime = 1626580800000; // Sun Jul 18 2021 12:00:00 GMT+0800
 
-const chunks = new TimeChunk(startTime, endTime).chunk(2, UNITS.MONTH);
+const chunks = new TimeDivider(startTime, endTime).divide(2, UNITS.MONTH);
 
 console.log(chunks);
 

@@ -1,4 +1,4 @@
-export class TimeChunk {
+export class TimeDivider {
   startTime: number;
   endTime: number;
 
@@ -7,7 +7,7 @@ export class TimeChunk {
     this.endTime = endTime;
   }
 
-  chunk(
+  divide(
     interval: number,
     unit: UNITS = UNITS.MILLISECOND,
   ): {

@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const { TimeChunk, UNITS } = require('../time-chunk');
+const { TimeDivider, UNITS } = require('../time-divider');
 
 describe('test', () => {
   it('millionSecond', () => {
@@ -11,7 +11,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.MILLISECOND,
     );
@@ -30,7 +30,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.SECOND,
     );
@@ -49,7 +49,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.MINUTE,
     );
@@ -68,7 +68,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.HOUR,
     );
@@ -87,7 +87,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.DAY,
     );
@@ -106,7 +106,7 @@ describe('test', () => {
     const INTERVAL = 2;
     const END_TIME = START_TIME + CHUNKS_LENGTH * INTERVAL * TIME;
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.WEEK,
     );
@@ -128,7 +128,7 @@ describe('test', () => {
       ),
     ).getTime();
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.MONTH,
     );
@@ -155,7 +155,7 @@ describe('test', () => {
       ),
     ).getTime();
 
-    const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
+    const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
       UNITS.YEAR,
     );

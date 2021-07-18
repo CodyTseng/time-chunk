@@ -1,16 +1,16 @@
 {
-  "name": "time-chunk",
+  "name": "time-divider",
   "version": "1.0.0",
   "description": "Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)",
-  "main": "./time-chunk",
+  "main": "./time-divider",
   "scripts": {
     "test": "mocha --reporter spec",
     "build": "tsc",
-    "lint": "eslint time-chunk.ts ./test/test.js --fix"
+    "lint": "eslint time-divider.ts ./test/test.js --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodyTseng/time-chunk.git"
+    "url": "git+https://github.com/CodyTseng/time-divider.git"
   },
   "keywords": [
     "duration",
@@ -24,9 +24,9 @@
   "author": "CodyTseng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CodyTseng/time-chunk/issues"
+    "url": "https://github.com/CodyTseng/time-divider/issues"
   },
-  "homepage": "https://github.com/CodyTseng/time-chunk#readme",
+  "homepage": "https://github.com/CodyTseng/time-divider#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",

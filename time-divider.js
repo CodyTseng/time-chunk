@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UNITS = exports.TimeChunk = void 0;
-var TimeChunk = /** @class */ (function () {
-    function TimeChunk(startTime, endTime) {
+exports.UNITS = exports.TimeDivider = void 0;
+var TimeDivider = /** @class */ (function () {
+    function TimeDivider(startTime, endTime) {
         if (endTime === void 0) { endTime = Date.now(); }
         this.startTime = startTime;
         this.endTime = endTime;
     }
-    TimeChunk.prototype.chunk = function (interval, unit) {
+    TimeDivider.prototype.divide = function (interval, unit) {
         if (unit === void 0) { unit = UNITS.MILLISECOND; }
         var chunks = [];
         for (var currTime = this.startTime; currTime < this.endTime;) {
@@ -20,36 +20,36 @@ var TimeChunk = /** @class */ (function () {
         }
         return chunks;
     };
-    TimeChunk.prototype._add = function (time, interval, unit) {
+    TimeDivider.prototype._add = function (time, interval, unit) {
         return this[unit](time, interval);
     };
-    TimeChunk.prototype._addMillisecond = function (time, interval) {
+    TimeDivider.prototype._addMillisecond = function (time, interval) {
         return time + interval;
     };
-    TimeChunk.prototype._addSeconde = function (time, interval) {
+    TimeDivider.prototype._addSeconde = function (time, interval) {
         return time + interval * 1000;
     };
-    TimeChunk.prototype._addMinute = function (time, interval) {
+    TimeDivider.prototype._addMinute = function (time, interval) {
         return time + interval * 1000 * 60;
     };
-    TimeChunk.prototype._addHour = function (time, interval) {
+    TimeDivider.prototype._addHour = function (time, interval) {
         return time + interval * 1000 * 60 * 60;
     };
-    TimeChunk.prototype._addDay = function (time, interval) {
+    TimeDivider.prototype._addDay = function (time, interval) {
         return time + interval * 1000 * 60 * 60 * 24;
     };
-    TimeChunk.prototype._addWeek = function (time, interval) {
+    TimeDivider.prototype._addWeek = function (time, interval) {
         return time + interval * 1000 * 60 * 60 * 24 * 7;
     };
-    TimeChunk.prototype._addMonth = function (time, interval) {
+    TimeDivider.prototype._addMonth = function (time, interval) {
         return new Date(new Date(time).setMonth(new Date(time).getMonth() + interval)).getTime();
     };
-    TimeChunk.prototype._addYear = function (time, interval) {
+    TimeDivider.prototype._addYear = function (time, interval) {
         return new Date(new Date(time).setFullYear(new Date(time).getFullYear() + interval)).getTime();
     };
-    return TimeChunk;
+    return TimeDivider;
 }());
-exports.TimeChunk = TimeChunk;
+exports.TimeDivider = TimeDivider;
 var UNITS;
 (function (UNITS) {
     UNITS["MILLISECOND"] = "_addMillisecond";

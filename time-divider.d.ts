@@ -1,8 +1,8 @@
-export declare class TimeChunk {
+export declare class TimeDivider {
     startTime: number;
     endTime: number;
     constructor(startTime: number, endTime?: number);
-    chunk(interval: number, unit?: UNITS): {
+    divide(interval: number, unit?: UNITS): {
         start: number;
         end: number;
     }[];

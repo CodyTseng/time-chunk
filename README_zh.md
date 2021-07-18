@@ -1,9 +1,9 @@
-# Time-Chunk
+# Time-Divider
 
 将一段时间顺序分割成多段指定时长的时间段，最后一段的时长可能小于指定时长。时间段不包含结束时间，左闭右开区间，[startTime, endTime)
 
 ```bash
-npm install time-chunk --save
+npm install time-divider --save
 ```
 
 [Eglish](./README.md) | 中文简体
@@ -11,12 +11,12 @@ npm install time-chunk --save
 ## 使用
 
 ```js
-const { TimeChunk, UNITS } = require('time-chunk');
+const { TimeDivider, UNITS } = require('time-divider');
 
 const startTime = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
 const endTime = 1626580800000; // Sun Jul 18 2021 12:00:00 GMT+0800
 
-const chunks = new TimeChunk(startTime, endTime).chunk(2, UNITS.MONTH);
+const chunks = new TimeDivider(startTime, endTime).divide(2, UNITS.MONTH);
 
 console.log(chunks);
 
