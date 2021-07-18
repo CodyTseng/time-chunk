@@ -7,7 +7,7 @@ export declare class TimeChunk {
         end: number;
     }[];
     private _add;
-    private _addMillionSecond;
+    private _addMillisecond;
     private _addSeconde;
     private _addMinute;
     private _addHour;
@@ -17,7 +17,7 @@ export declare class TimeChunk {
     private _addYear;
 }
 export declare enum UNITS {
-    MILLIONSECOND = "_addMillionSecond",
+    MILLISECOND = "_addMillisecond",
     SECOND = "_addSeconde",
     MINUTE = "_addMinute",
     HOUR = "_addHour",

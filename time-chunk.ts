@@ -7,7 +7,7 @@ export class TimeChunk {
     this.endTime = endTime;
   }
 
-  chunk(interval: number, unit: UNITS = UNITS.MILLIONSECOND) {
+  chunk(interval: number, unit: UNITS = UNITS.MILLISECOND) {
     const chunks = [];
     for (let currTime = this.startTime; currTime < this.endTime; ) {
       const next = this._add(currTime, interval, unit);
@@ -24,7 +24,7 @@ export class TimeChunk {
     return this[unit](time, interval);
   }
 
-  private _addMillionSecond(time: number, interval: number) {
+  private _addMillisecond(time: number, interval: number) {
     return time + interval;
   }
 
@@ -62,7 +62,7 @@ export class TimeChunk {
 }
 
 export enum UNITS {
-  MILLIONSECOND = '_addMillionSecond',
+  MILLISECOND = '_addMillisecond',
   SECOND = '_addSeconde',
   MINUTE = '_addMinute',
   HOUR = '_addHour',

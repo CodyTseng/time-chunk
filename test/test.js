@@ -13,7 +13,7 @@ describe('test', () => {
 
     const chunks = new TimeChunk(START_TIME, END_TIME).chunk(
       INTERVAL,
-      UNITS.MILLIONSECOND,
+      UNITS.MILLISECOND,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);

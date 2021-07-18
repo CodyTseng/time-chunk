@@ -8,7 +8,7 @@ var TimeChunk = /** @class */ (function () {
         this.endTime = endTime;
     }
     TimeChunk.prototype.chunk = function (interval, unit) {
-        if (unit === void 0) { unit = UNITS.MILLIONSECOND; }
+        if (unit === void 0) { unit = UNITS.MILLISECOND; }
         var chunks = [];
         for (var currTime = this.startTime; currTime < this.endTime;) {
             var next = this._add(currTime, interval, unit);
@@ -23,7 +23,7 @@ var TimeChunk = /** @class */ (function () {
     TimeChunk.prototype._add = function (time, interval, unit) {
         return this[unit](time, interval);
     };
-    TimeChunk.prototype._addMillionSecond = function (time, interval) {
+    TimeChunk.prototype._addMillisecond = function (time, interval) {
         return time + interval;
     };
     TimeChunk.prototype._addSeconde = function (time, interval) {
@@ -52,7 +52,7 @@ var TimeChunk = /** @class */ (function () {
 exports.TimeChunk = TimeChunk;
 var UNITS;
 (function (UNITS) {
-    UNITS["MILLIONSECOND"] = "_addMillionSecond";
+    UNITS["MILLISECOND"] = "_addMillisecond";
     UNITS["SECOND"] = "_addSeconde";
     UNITS["MINUTE"] = "_addMinute";
     UNITS["HOUR"] = "_addHour";
