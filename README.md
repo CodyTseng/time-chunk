@@ -1,6 +1,6 @@
 # Time-Divider
 
-[![Build Status](https://app.travis-ci.com/CodyTseng/time-divider.svg?branch=master)](https://app.travis-ci.com/CodyTseng/time-divider)
+[![Build Status](https://app.travis-ci.com/CodyTseng/time-divider.svg?branch=master)](https://app.travis-ci.com/CodyTseng/time-divider) [![Coverage Status](https://coveralls.io/repos/github/CodyTseng/time-divider/badge.svg?branch=master)](https://coveralls.io/github/CodyTseng/time-divider?branch=master)
 
 Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)
 

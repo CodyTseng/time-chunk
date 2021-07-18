@@ -1,6 +1,6 @@
 # Time-Divider
 
-[![Build Status](https://app.travis-ci.com/CodyTseng/time-divider.svg?branch=master)](https://app.travis-ci.com/CodyTseng/time-divider)
+[![Build Status](https://app.travis-ci.com/CodyTseng/time-divider.svg?branch=master)](https://app.travis-ci.com/CodyTseng/time-divider) [![Coverage Status](https://coveralls.io/repos/github/CodyTseng/time-divider/badge.svg?branch=master)](https://coveralls.io/github/CodyTseng/time-divider?branch=master)
 
 将一段时间顺序分割成多段指定时长的时间段，最后一段的时长可能小于指定时长。时间段不包含结束时间，左闭右开区间，[startTime, endTime)
 
