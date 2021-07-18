@@ -1,14 +1,14 @@
-# time-chunk
+# Time-Chunk
 
-Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)
+将一段时间顺序分割成多段指定时长的时间段，最后一段的时长可能小于指定时长。时间段不包含结束时间，左闭右开区间，[startTime, endTime)
 
 ```bash
 npm install time-chunk --save
 ```
 
-Eglish | [中文简体](./README_zh.md)
+[Eglish](./README.md) | 中文简体
 
-## Usage
+## 使用
 
 ```js
 const { TimeChunk, UNITS } = require('time-chunk');
@@ -28,7 +28,7 @@ console.log(
 );
 ```
 
-Output:
+输出:
 
 ```bash
 [
