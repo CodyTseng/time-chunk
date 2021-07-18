@@ -9,12 +9,12 @@ var TimeChunk = /** @class */ (function () {
     }
     TimeChunk.prototype.chunk = function (interval, unit) {
         if (unit === void 0) { unit = UNITS.MILLIONSECOND; }
-        var chunks = new Array();
+        var chunks = [];
         for (var currTime = this.startTime; currTime < this.endTime;) {
             var next = this._add(currTime, interval, unit);
             chunks.push({
                 start: currTime,
-                end: Math.min(next - 1, this.endTime)
+                end: Math.min(next - 1, this.endTime),
             });
             currTime = next;
         }

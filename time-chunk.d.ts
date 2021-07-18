@@ -2,7 +2,10 @@ export declare class TimeChunk {
     startTime: number;
     endTime: number;
     constructor(startTime: number, endTime?: number);
-    chunk(interval: number, unit?: UNITS): any[];
+    chunk(interval: number, unit?: UNITS): {
+        start: number;
+        end: number;
+    }[];
     private _add;
     private _addMillionSecond;
     private _addSeconde;
