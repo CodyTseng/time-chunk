@@ -1,7 +1,7 @@
 {
   "name": "time-chunk",
   "version": "1.0.0",
-  "description": "Splitting a time period into multiple time periods of specified duration.",
+  "description": "Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)",
   "main": "./time-chunk",
   "scripts": {
     "test": "mocha --reporter spec",
@@ -12,9 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/CodyTseng/time-chunk.git"
   },
-  "keywords": [],
+  "keywords": [
+    "duration",
+    "time",
+    "chunk",
+    "period",
+    "segement",
+    "range",
+    "divide"
+  ],
   "author": "CodyTseng",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodyTseng/time-chunk/issues"
   },
