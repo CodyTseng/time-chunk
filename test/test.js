@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const { TimeChunk, UNITS } = require('../dist/index');
+const { TimeChunk, UNITS } = require('../time-chunk');
 
 describe('test', () => {
     it('millionSecond', () => {

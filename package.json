@@ -2,7 +2,7 @@
   "name": "time-chunk",
   "version": "1.0.0",
   "description": "Splitting a time period into multiple time periods of specified duration.",
-  "main": "./dist/index.js",
+  "main": "./time-chunk",
   "scripts": {
     "test": "mocha --reporter spec",
     "build": "tsc"
