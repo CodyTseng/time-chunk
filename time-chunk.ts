@@ -1,26 +1,26 @@
 export class TimeChunk {
-    _startTime: number;
-    _endTime: number;
+    startTime: number;
+    endTime: number;
 
     constructor(startTime: number, endTime: number = Date.now()) {
-        this._startTime = startTime;
-        this._endTime = endTime;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     chunk(interval: number, unit: UNITS = UNITS.MILLIONSECOND) {
         const chunks = new Array();
-        for (let currTime = this._startTime; currTime < this._endTime; ) {
+        for (let currTime = this.startTime; currTime < this.endTime; ) {
             const next = this._add(currTime, interval, unit);
             chunks.push({
                 start: currTime,
-                end: Math.min(next - 1, this._endTime)
+                end: Math.min(next - 1, this.endTime)
             });
             currTime = next;
         }
         return chunks;
     }
 
-    _add(time: number, interval: number, unit: UNITS) {
+    private _add(time: number, interval: number, unit: UNITS) {
         switch (unit) {
             case UNITS.MILLIONSECOND:
                 return this._addMillionSecond(time, interval);
@@ -41,35 +41,35 @@ export class TimeChunk {
         }
     }
 
-    _addMillionSecond(time: number, interval: number) {
+    private _addMillionSecond(time: number, interval: number) {
         return time + interval;
     }
     
-    _addSeconde(time: number, interval: number) {
+    private _addSeconde(time: number, interval: number) {
         return time + interval * 1000;
     }
     
-    _addMinute(time: number, interval: number) {
+    private _addMinute(time: number, interval: number) {
         return time + interval * 1000 * 60;
     }
     
-    _addHour(time: number, interval: number) {
+    private _addHour(time: number, interval: number) {
         return time + interval * 1000 * 60 * 60;
     }
     
-    _addDay(time: number, interval: number) {
+    private _addDay(time: number, interval: number) {
         return time + interval * 1000 * 60 * 60 * 24;
     }
     
-    _addWeek(time: number, interval: number) {
+    private _addWeek(time: number, interval: number) {
         return time + interval * 1000 * 60 * 60 * 24 * 7;
     }
     
-    _addMonth(time: number, interval: number) {
+    private _addMonth(time: number, interval: number) {
         return new Date(new Date(time).setMonth(new Date(time).getMonth() + interval)).getTime();
     }
     
-    _addYear(time: number, interval: number) {
+    private _addYear(time: number, interval: number) {
         return new Date(new Date(time).setFullYear(new Date(time).getFullYear() + interval)).getTime();
     }    
 }
