@@ -14,7 +14,7 @@ var TimeChunk = /** @class */ (function () {
             var next = this._add(currTime, interval, unit);
             chunks.push({
                 start: currTime,
-                end: Math.min(next - 1, this.endTime - 1),
+                end: Math.min(next, this.endTime) - 1,
             });
             currTime = next;
         }
