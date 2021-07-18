@@ -1,5 +1,7 @@
 # Time-Divider
 
+[![Build Status](https://app.travis-ci.com/CodyTseng/time-divider.svg?branch=master)](https://app.travis-ci.com/CodyTseng/time-divider)
+
 Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)
 
 ```bash
