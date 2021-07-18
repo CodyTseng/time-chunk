@@ -7,7 +7,13 @@ export class TimeChunk {
     this.endTime = endTime;
   }
 
-  chunk(interval: number, unit: UNITS = UNITS.MILLISECOND) {
+  chunk(
+    interval: number,
+    unit: UNITS = UNITS.MILLISECOND,
+  ): {
+    start: number;
+    end: number;
+  }[] {
     const chunks = [];
     for (let currTime = this.startTime; currTime < this.endTime; ) {
       const next = this._add(currTime, interval, unit);
