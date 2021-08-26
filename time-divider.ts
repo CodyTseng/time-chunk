@@ -14,7 +14,10 @@ export class TimeDivider {
     start: number;
     end: number;
   }[] {
-    const chunks = [];
+    const chunks: {
+      start: number;
+      end: number;
+    }[] = [];
     for (let currTime = this.startTime; currTime < this.endTime; ) {
       const next = this._add(currTime, interval, unit);
       chunks.push({
