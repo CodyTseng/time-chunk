@@ -2,7 +2,7 @@ export declare class TimeDivider {
     startTime: number;
     endTime: number;
     constructor(startTime: number, endTime?: number);
-    divide(interval: number, unit?: UNITS): {
+    divide(interval: number, unit?: Units): {
         start: number;
         end: number;
     }[];
@@ -15,16 +15,6 @@ export declare class TimeDivider {
     private _addWeek;
     private _addMonth;
     private _addYear;
-}
-export declare enum UNITS {
-    MILLISECOND = "_addMillisecond",
-    SECOND = "_addSeconde",
-    MINUTE = "_addMinute",
-    HOUR = "_addHour",
-    DAY = "_addDay",
-    WEEK = "_addWeek",
-    MONTH = "_addMonth",
-    YEAR = "_addYear"
 }
 export declare enum Units {
     Millisecond = "_addMillisecond",

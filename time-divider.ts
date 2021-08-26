@@ -9,7 +9,7 @@ export class TimeDivider {
 
   divide(
     interval: number,
-    unit: UNITS = UNITS.MILLISECOND,
+    unit: Units = Units.Millisecond,
   ): {
     start: number;
     end: number;
@@ -29,7 +29,7 @@ export class TimeDivider {
     return chunks;
   }
 
-  private _add(time: number, interval: number, unit: UNITS) {
+  private _add(time: number, interval: number, unit: Units) {
     return this[unit](time, interval);
   }
 
@@ -68,17 +68,6 @@ export class TimeDivider {
       new Date(time).setFullYear(new Date(time).getFullYear() + interval),
     ).getTime();
   }
-}
-
-export enum UNITS {
-  MILLISECOND = '_addMillisecond',
-  SECOND = '_addSeconde',
-  MINUTE = '_addMinute',
-  HOUR = '_addHour',
-  DAY = '_addDay',
-  WEEK = '_addWeek',
-  MONTH = '_addMonth',
-  YEAR = '_addYear',
 }
 
 export enum Units {

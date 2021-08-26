@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('chai').expect;
-const { TimeDivider, UNITS } = require('../time-divider');
+const { TimeDivider, Units } = require('../time-divider');
 
 describe('test', () => {
   it('millionSecond', () => {
@@ -13,7 +13,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.MILLISECOND,
+      Units.Millisecond,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -48,7 +48,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.SECOND,
+      Units.Second,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -67,7 +67,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.MINUTE,
+      Units.Minute,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -86,7 +86,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.HOUR,
+      Units.Hour,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -105,7 +105,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.DAY,
+      Units.Day,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -124,7 +124,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.WEEK,
+      Units.Week,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -146,7 +146,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.MONTH,
+      Units.Month,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -173,7 +173,7 @@ describe('test', () => {
 
     const chunks = new TimeDivider(START_TIME, END_TIME).divide(
       INTERVAL,
-      UNITS.YEAR,
+      Units.Year,
     );
     expect(chunks.length).equal(CHUNKS_LENGTH);
     expect(chunks[0].start).equal(START_TIME);
@@ -190,7 +190,7 @@ describe('test', () => {
     const START_TIME = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
     const INTERVAL = 2;
 
-    const chunks = new TimeDivider(START_TIME).divide(INTERVAL, UNITS.YEAR);
+    const chunks = new TimeDivider(START_TIME).divide(INTERVAL, Units.Year);
     expect(chunks[0].start).equal(START_TIME);
     for (let i = 1; i < chunks.length; i++) {
       expect(
