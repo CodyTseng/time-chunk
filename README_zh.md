@@ -13,12 +13,12 @@ npm install time-divider --save
 ## 使用
 
 ```js
-const { TimeDivider, UNITS } = require('time-divider');
+const { TimeDivider, Units } = require('time-divider');
 
 const startTime = 1577462400000; // Sat Dec 28 2019 00:00:00 GMT+0800
 const endTime = 1626580800000; // Sun Jul 18 2021 12:00:00 GMT+0800
 
-const chunks = new TimeDivider(startTime, endTime).divide(2, UNITS.MONTH);
+const chunks = new TimeDivider(startTime, endTime).divide(2, Units.Month);
 
 console.log(chunks);
 
@@ -59,7 +59,7 @@ console.log(
 ]
 ```
 
-### UNITS
+### Units
 
 ```ts
 enum Units {
