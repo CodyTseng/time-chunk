@@ -1,6 +1,6 @@
 {
   "name": "time-divider",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Sequentially divides a period of time into multiple segments of specified duration, the last segment may be of less than the specified duration. Time periods do not contain end times, [startTime, endTime)",
   "main": "./time-divider",
   "scripts": {
