@@ -26,3 +26,13 @@ export declare enum UNITS {
     MONTH = "_addMonth",
     YEAR = "_addYear"
 }
+export declare enum Units {
+    Millisecond = "_addMillisecond",
+    Second = "_addSeconde",
+    Minute = "_addMinute",
+    Hour = "_addHour",
+    Day = "_addDay",
+    Week = "_addWeek",
+    Month = "_addMonth",
+    Year = "_addYear"
+}

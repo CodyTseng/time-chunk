@@ -62,15 +62,15 @@ console.log(
 ### UNITS
 
 ```ts
-enum UNITS {
-  MILLISECOND,
-  SECOND,
-  MINUTE,
-  HOUR,
-  DAY,
-  WEEK,
-  MONTH,
-  YEAR,
+enum Units {
+  Millisecond,
+  Second,
+  Minute,
+  Hour,
+  Day,
+  Week,
+  Month,
+  Year,
 }
 ```
 

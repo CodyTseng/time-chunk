@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UNITS = exports.TimeDivider = void 0;
+exports.Units = exports.UNITS = exports.TimeDivider = void 0;
 var TimeDivider = /** @class */ (function () {
     function TimeDivider(startTime, endTime) {
         if (endTime === void 0) { endTime = Date.now(); }
@@ -61,3 +61,14 @@ var UNITS;
     UNITS["MONTH"] = "_addMonth";
     UNITS["YEAR"] = "_addYear";
 })(UNITS = exports.UNITS || (exports.UNITS = {}));
+var Units;
+(function (Units) {
+    Units["Millisecond"] = "_addMillisecond";
+    Units["Second"] = "_addSeconde";
+    Units["Minute"] = "_addMinute";
+    Units["Hour"] = "_addHour";
+    Units["Day"] = "_addDay";
+    Units["Week"] = "_addWeek";
+    Units["Month"] = "_addMonth";
+    Units["Year"] = "_addYear";
+})(Units = exports.Units || (exports.Units = {}));
